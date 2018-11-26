@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="container" *ngIf="album">
+  <div class="row">
+    <div class="col">
+      <img [src]="album.images[1].url" alt="">
+      <div class="caption">
+        <h1>{{album.name}}</h1>
+        <h2>{{album.artists[0].name}}</h2>
+        <h3>Tracks</h3>
+        <ol>
+          <li *ngFor="let track of album.tracks.items">
+            {{track.name}}
+          </li>
+        </ol>
+      </div>
+      <button (click)="back()" class="btn">Back</button>
+    </div>
+  </div>
+</div>

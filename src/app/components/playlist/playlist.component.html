@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Look for your favorite playlist</h1>
+      <form #myForm="ngForm">
+        <div class="form-group">
+          <input type="text" name="query" [(ngModel)]="query" class="form-control" placeholder="Search Playlist" (keyup)="submit()">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let result of results">
+        <div>
+          <a (click)="goToPlaylist(result.id)">
+            <img *ngIf="result.images[0].url" src="{{result.images[0].url}}" onerror="this.onerror=null;this.src='https://picsum.photos/200/200';" alt="" class="img-thumbnail">
+          </a>
+            <div class="caption">
+              <ul>
+                <li>{{result.name}}</li>
+                <li>Tracks: {{result.tracks.total}}</li>
+              </ul>
+            </div>
+        </div>
+      </div>
+  </div>

@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h1>Hi {{currentUser.firstName}}!</h1>
+      <p>You're logged in Spotify API</p>
+      <h3>All registered users:</h3>
+    </div>
+
+    <div class="col-10">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Delete User</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.firstName | titlecase }}</td>
+            <td>{{user.lastName | titlecase }}</td>
+            <td>@{{user.username | titlecase }} </td>
+            <td>
+              <button class="btn btn-ligth"(click)="deleteUser(user.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-ligth" [routerLink]="['/loginn']">Logout</button>
+    </div>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<div class="container">
+  <div *ngIf="artist">
+    <div class="col-6">
+      <img [src]="artist.images[0].url" alt="" class="img-thumbnail">
+      <div class="caption">
+        <h2>{{ artist.name }}</h2>
+        <ul>
+          <li><b>Principal Genres: </b>{{artist.genres[0] | titlecase }}, {{artist.genres[1] | titlecase }} </li>
+          <li><b>Followers: </b>{{artist.followers.total}}</li>
+          <li><b>Popularity: </b>{{artist.popularity}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

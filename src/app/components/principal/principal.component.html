@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+  <div class="container music-cont">
+  <h1>Need Music?</h1>
+  <p>Use Spotify to browse your own music</p>
+  <form #myForm="ngForm">
+    <div class="form-group">
+      <input type="text" name="query" [(ngModel)]="query" class="form-control" placeholder="Search Music" (keyup)="submit()">
+    </div>
+  </form>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let result of results">
+        <div>
+            <img src="{{result.album.images[0].url}}" alt="" class="img-thumbnail">
+            <div class="caption">
+              <ul>
+                  <li>
+                    <a [routerLink]="['/artists', result.artists[0].id]">
+                      <b>Artist: </b> {{result.artists[0].name}}</a>
+                  </li>
+                <li> <b>Song: </b>{{result.name}}</li>
+                <li>
+                  <a [routerLink]="['/album', result.album.id]">
+                    <b>Album: </b> {{result.album.name}}</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
