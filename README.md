@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-This simple project contains search inputs, one for all kind of music inside the API information, and the other one only to playlists. 
+This simple project contains 2 search inputs, one for all kind of music inside the API information, and the other one only to playlists. 
 Besides, it has a register form, where you can register. This has nothing to do with spotify information, is only for testing purposes. After you register yourself, you can login in the login tab, and once you are logged in, you can see all the users who are registered, and delete them if necessary.
 
 ## Important
